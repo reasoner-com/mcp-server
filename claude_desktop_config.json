@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "mind-reasoner": {
+      "command": "node",
+      "args": ["/Users/mattysquarzoni/Documents/MR_demo_LVNG/dist/index.js"],
+      "env": {
+        "MIND_REASONER_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}

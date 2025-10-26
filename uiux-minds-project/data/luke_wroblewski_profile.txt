@@ -1,0 +1,83 @@
+LUKE WROBLEWSKI - MOBILE-FIRST UX EXPERT & PRODUCT DESIGN LEADER
+
+OVERVIEW
+Luke Wroblewski is an internationally recognized digital product leader who has designed and built software used by billions of people worldwide. He is currently a Product Director at Google and is renowned for pioneering the "Mobile First" design philosophy.
+
+CAREER HIGHLIGHTS
+- Current: Product Director at Google
+- Former CEO and Co-founder of Polar (acquired by Google in 2014)
+- Former Chief Product Officer and Co-Founder of Bagcheck (acquired by Twitter in 2011)
+- Previously held the role of Chief Design Architect at Yahoo!
+- Former Lead User Interface Designer at eBay
+- Former Senior Interface Designer at NCSA (birthplace of Mosaic, a pioneering graphical Web browser)
+
+PUBLISHED WORKS
+1. "Mobile First" (October 2011) - A brief but information-packed book that makes the case for why websites and applications should be designed for mobile first
+2. "Web Form Design" - Comprehensive guide on designing effective web forms
+3. "Site-Seeing: A Visual Approach to Web Usability" - Visual-focused usability principles
+
+DESIGN PHILOSOPHY & EXPERTISE
+Luke specializes in:
+- Mobile-first design strategy
+- Digital product design and strategy
+- User interface design
+- Metrics and analytics across all departments
+- Product management and user experience design
+- User research methodologies
+
+NOTABLE INSIGHTS ON METRICS & MEASUREMENT
+Luke emphasizes careful metric selection with this approach:
+1. Set goals - what do you want to see happen?
+2. List potential metrics; they could be data you have or need to collect
+3. For each, write what would happen if you measure it; what actions would you take?
+4. Rank this list of metrics by the biggest/clearest impact on your goals
+5. Collect data for the top few to see if the actual data really lead to the outcomes you thought it would
+6. Regularly & visibility track the ones that do
+
+Key principle: "Remember you are what you measure, so choose carefully!"
+
+DESIGN APPROACH
+Luke's approach to design emphasizes:
+- Mobile-first thinking in all product development
+- Data-driven decision making
+- Clear, measurable goals aligned with user needs
+- Simplicity and usability over complexity
+- Understanding user behavior through metrics
+- Building products that scale to billions of users
+
+EXPERTISE AREAS
+- iOS and Android product development
+- Web usability and accessibility
+- Form design and user input optimization
+- Visual hierarchy and information architecture
+- Cross-platform design consistency
+- Product strategy and growth
+- User research and testing
+- Analytics implementation and interpretation
+
+SPEAKING & THOUGHT LEADERSHIP
+Luke is very active on LinkedIn with 320,000+ followers, regularly sharing insights on:
+- Product metrics and KPIs
+- Design decision-making
+- Mobile-first strategies
+- User experience best practices
+- Product management principles
+
+INDUSTRY IMPACT
+Luke's work has influenced how millions of designers and product teams approach mobile design. His "Mobile First" philosophy has become a standard practice in the industry, fundamentally changing how teams prioritize and think about responsive design.
+
+KEY PRINCIPLES
+1. Design for mobile constraints first, then enhance for larger screens
+2. Choose metrics carefully - they drive behavior
+3. Focus on user goals, not just features
+4. Use data to validate design decisions
+5. Simplicity scales better than complexity
+6. Test with real users early and often
+
+DESIGN VALUES
+- User-centric thinking
+- Data-informed creativity
+- Mobile-first approach
+- Scalability and performance
+- Clarity and simplicity
+- Measurable impact

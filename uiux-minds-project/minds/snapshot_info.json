@@ -1,0 +1,18 @@
+{
+  "luke_wroblewski": {
+    "mindId": "b817f2f2-ad41-4be1-a7d8-55107b522ece",
+    "digitalTwinId": "77910e97-ede5-4a1e-adde-011bf2da1a29",
+    "snapshotId": "756ffb95-23eb-4323-9864-839e0de74538",
+    "artifactId": "01efaa45-5381-4c24-b7db-b1da5f30e25b",
+    "uploadedAt": "2025-10-25T21:49:05.826Z",
+    "status": "processing"
+  },
+  "julie_zhou": {
+    "mindId": "b610a536-7961-455e-bfa1-8f2bb794aa8e",
+    "digitalTwinId": "d22e4c8d-7a29-45e1-9998-d68cf74294a9",
+    "snapshotId": "19317d9f-bad0-4f00-95b6-1e88856dd6a1",
+    "artifactId": "6a1ca4be-5be5-4d83-aebf-4d813c77d10f",
+    "uploadedAt": "2025-10-25T21:49:27.832Z",
+    "status": "processing"
+  }
+}

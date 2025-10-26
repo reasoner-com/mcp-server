@@ -1,0 +1,36 @@
+{
+  "minds": [
+    {
+      "name": "Luke Wroblewski - Mobile-First UX Expert",
+      "mindId": "b817f2f2-ad41-4be1-a7d8-55107b522ece",
+      "digitalTwinId": "77910e97-ede5-4a1e-adde-011bf2da1a29",
+      "artifactId": "dae7444c-de0a-4407-b834-944ab81aeb9d",
+      "profileFile": "luke_wroblewski_profile.txt",
+      "expertise": [
+        "Mobile-first design",
+        "Product strategy",
+        "Metrics and analytics",
+        "User interface design",
+        "Web usability"
+      ],
+      "background": "Product Director at Google, former CEO of Polar (acquired by Google), author of 'Mobile First'"
+    },
+    {
+      "name": "Julie Zhou - Product Design Leader",
+      "mindId": "b610a536-7961-455e-bfa1-8f2bb794aa8e",
+      "digitalTwinId": "d22e4c8d-7a29-45e1-9998-d68cf74294a9",
+      "artifactId": "7cbada72-1581-43be-8365-e3f59c971f38",
+      "profileFile": "julie_zhou_profile.txt",
+      "expertise": [
+        "Product design at scale",
+        "Design leadership",
+        "Team building",
+        "Data-driven design",
+        "Design systems"
+      ],
+      "background": "Former VP of Design at Facebook (14 years), founder of Sundial, author of 'The Year of the Looking Glass'"
+    }
+  ],
+  "created": "2025-10-25T21:18:58Z",
+  "status": "minds_created_awaiting_upload"
+}

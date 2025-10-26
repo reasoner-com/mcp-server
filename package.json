@@ -1,0 +1,35 @@
+{
+  "name": "mcp-mind-reasoner",
+  "version": "1.0.0",
+  "description": "MCP server for Mind Reasoner API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-mind-reasoner": "dist/index.js",
+    "mr-cli": "cli.mjs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "mind-reasoner",
+    "api",
+    "digital-twin",
+    "simulation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.6.5",
+    "dotenv": "^16.6.1",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}
