@@ -50,7 +50,6 @@ async function getSignedUrl(mindId, contentType = "application/octet-stream") {
 	console.log("\n✅ Signed URL obtained!\n");
 	console.log("Artifact ID:", response.data.artifactId);
 	console.log("Signed URL:", `${response.data.signedUrl.substring(0, 50)}...`);
-	console.log(response.data);
 	console.log("\n💾 Save the Artifact ID!");
 	return response.data;
 }
