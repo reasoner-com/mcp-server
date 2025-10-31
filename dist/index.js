@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+import { readFile } from "node:fs/promises";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
 import axios, { AxiosError } from "axios";
 import FormData from "form-data";
-import { readFile } from "fs/promises";
-const API_BASE_URL = "https://app.mindreasoner.com/api/public/v1";
+const API_BASE_URL = "https://staging.app.mindreasoner.com/api/public/v1";
 const API_KEY = process.env.MIND_REASONER_API_KEY || "";
 if (!API_KEY) {
     console.error("Error: MIND_REASONER_API_KEY environment variable is required");
@@ -57,10 +57,11 @@ const tools = [
                 },
                 contentType: {
                     type: "string",
+                    default: "application/octet-stream",
                     description: "MIME type of the file (e.g., 'text/vtt', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')",
                 },
             },
-            required: ["signedUrl", "filePath", "contentType"],
+            required: ["signedUrl", "filePath"],
         },
     },
     {
@@ -167,9 +168,10 @@ async function getSignedUploadUrl(params) {
 }
 async function uploadFileToSignedUrl(params) {
     const fileContent = await readFile(params.filePath);
+    const contentType = params.contentType || "application/octet-stream";
     await axios.put(params.signedUrl, fileContent, {
         headers: {
-            "Content-Type": params.contentType,
+            "Content-Type": contentType,
         },
     });
     return { success: true, message: "File uploaded successfully" };
