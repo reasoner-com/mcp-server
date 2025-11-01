@@ -5,7 +5,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
 import axios, { AxiosError } from "axios";
 import FormData from "form-data";
-const API_BASE_URL = "https://staging.app.mindreasoner.com/api/public/v1";
+const API_BASE_URL = "https://app.mindreasoner.com/api/public/v1";
 const API_KEY = process.env.MIND_REASONER_API_KEY || "";
 if (!API_KEY) {
     console.error("Error: MIND_REASONER_API_KEY environment variable is required");
@@ -163,16 +163,14 @@ async function createMind(params) {
     return response.data;
 }
 async function getSignedUploadUrl(params) {
-    const response = await api.get(`/minds/${params.mindId}/signed-url`);
+    const response = await api.get(`/minds/${params.mindId}/signed-url?contentType=${params.contentType || "application/octet-stream"}`);
     return response.data;
 }
 async function uploadFileToSignedUrl(params) {
     const fileContent = await readFile(params.filePath);
     const contentType = params.contentType || "application/octet-stream";
     await axios.put(params.signedUrl, fileContent, {
-        headers: {
-            "Content-Type": contentType,
-        },
+        headers: { "Content-Type": contentType },
     });
     return { success: true, message: "File uploaded successfully" };
 }
