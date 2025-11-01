@@ -12,7 +12,7 @@ import FormData from "form-data";
 
 dotenv.config();
 
-const API_BASE_URL = "https://app.mindreasoner.com/api/public/v1";
+const API_BASE_URL = "https://staging.app.mindreasoner.com/api/public/v1";
 const API_KEY = process.env.MIND_REASONER_API_KEY;
 
 if (!API_KEY) {
@@ -50,6 +50,7 @@ async function getSignedUrl(mindId, contentType = "application/octet-stream") {
 	console.log("\n✅ Signed URL obtained!\n");
 	console.log("Artifact ID:", response.data.artifactId);
 	console.log("Signed URL:", `${response.data.signedUrl.substring(0, 50)}...`);
+	console.log("Content Type:", response.data.contentType);
 	console.log("\n💾 Save the Artifact ID!");
 	return response.data;
 }
