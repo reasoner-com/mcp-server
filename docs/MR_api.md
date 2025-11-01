@@ -216,6 +216,7 @@ slug: getting-started-mind-reasoner-api
           tooltips={{
             API_KEY:`<p>`Your secret API Key from your dashboard.`</p>`,
             MIND_ID: `<p>`The unique ID for your mind, which you received in the response from Step 1.`</p>`
+            CONTENT_TYPE: `<p>`The MIME type of the file you are uploading. Defaults to 'application/octet-stream'. You can specify 'text/vtt', 'application/pdf', or 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'.`</p>`
           }}
         >
           `<CodeBlocks>`
@@ -225,7 +226,7 @@ slug: getting-started-mind-reasoner-api
 
     const apiKey = '{{API_KEY}}';
             const mindId = '{{MIND_ID}}'; // <-- From Step 1
-            const url =`https://app.mindreasoner.com/api/public/v1/minds/${mindId}/signed-url`;
+            const url =`https://app.mindreasoner.com/api/public/v1/minds/${mindId}/signed-url&contentType={{CONTENT_TYPE}}`;
 
     const getUploadUrl = async () => {
               try {
@@ -332,17 +333,18 @@ slug: getting-started-mind-reasoner-api
           data={{ SIGNED_URL: "YOUR_SIGNED_URL" }}
           tooltips={{
             SIGNED_URL:`<p>`The temporary, secure URL for file uploads, which you received in the response from Part A.`</p>`
+            CONTENT_TYPE:`<p>`The MIME type of the file you are uploading. It must match the contentType parameter in the get_signed_upload_url tool.`</p>`
           }}
         >
           `<CodeBlocks>`
-            ``bash title="cURL"             curl -X PUT "{{SIGNED_URL}}" \               -H "Content-Type: text/vtt" \               --data-binary "@/path/to/your/transcript.vtt"             ``
+            ``bash title="cURL"             curl -X PUT "{{SIGNED_URL}}" \               -H "Content-Type: {{CONTENT_TYPE}}" \               --data-binary "@/path/to/your/transcript.vtt"             ``
             ```javascript title="Node.js"
             import axios from 'axios';
             import fs from 'fs';
 
     const signedUrl = '{{SIGNED_URL}}'; // <-- From Part A
             const filePath = '/path/to/your/transcript.vtt';
-            const contentType = 'text/vtt'; // Adjust for your file type (e.g., application/pdf)
+            const contentType = '{{CONTENT_TYPE}}'; // <-- From Part A
 
     const uploadFile = async () => {
               try {
@@ -361,10 +363,10 @@ slug: getting-started-mind-reasoner-api
 
     signed_url = '{{SIGNED_URL}}' # <-- From Part A
             file_path = '/path/to/your/transcript.vtt'
-            content_type = 'text/vtt' # Adjust for your file type (e.g., application/pdf)
+            content_type = '{{CONTENT_TYPE}}' # <-- From Part A
 
     with open(file_path, 'rb') as f:
-                headers = {'Content-Type': content_type}
+                headers = {'Content-Type': '{{CONTENT_TYPE}}'}
                 response = requests.put(signed_url, data=f, headers=headers)
 
     if response.status_code == 200:
@@ -399,14 +401,14 @@ slug: getting-started-mind-reasoner-api
 
     signed_url = '{{SIGNED_URL}}' # <-- From Part A
             file_path = '/path/to/your/transcript.vtt'
-            content_type = 'text/vtt' # Adjust for your file type
+            content_type = '{{CONTENT_TYPE}}' # <-- From Part A
 
     url = URI(signed_url)
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true
 
     request = Net::HTTP::Put.new(url)
-            request["Content-Type"] = content_type
+            request["Content-Type"] = '{{CONTENT_TYPE}}' # <-- From Part A
             request.body = File.read(file_path)
 
     response = http.request(request)
@@ -426,7 +428,7 @@ slug: getting-started-mind-reasoner-api
     func main() {
             	signedURL := "{{SIGNED_URL}}" // <-- From Part A
             	filePath := "/path/to/your/transcript.vtt"
-            	contentType := "text/vtt" // Adjust for your file type
+            	contentType := "{{CONTENT_TYPE}}" // <-- From Part A
 
     file, err := os.Open(filePath)
             	if err != nil { panic(err) }

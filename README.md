@@ -161,10 +161,10 @@ The package includes a standalone CLI tool that works without Claude.
 mr-cli create "Person Name"
 
 # Get signed upload URL
-mr-cli upload-url <MIND_ID>
+mr-cli upload-url <MIND_ID> <CONTENT_TYPE>
 
 # Upload a file
-mr-cli upload "<SIGNED_URL>" /path/to/file.vtt text/vtt
+mr-cli upload "<SIGNED_URL>" /path/to/file.vtt <CONTENT_TYPE>
 
 # Create snapshot
 mr-cli snapshot <MIND_ID> <DIGITAL_TWIN_ID> <ARTIFACT_ID>
@@ -185,7 +185,7 @@ mr-cli create "Customer Service Rep"
 
 # 2. Get upload URL
 mr-cli upload-url abc-123
-# Output: Signed URL: https://..., Artifact ID: ghi-789
+# Output: Signed URL: https://..., Artifact ID: ghi-789, Content Type: text/vtt
 
 # 3. Upload file
 mr-cli upload "https://storage.googleapis.com/..." ./transcript.vtt text/vtt
@@ -235,16 +235,22 @@ Gets a secure URL for uploading data files.
 
 **Parameters:**
 - `mindId` (string, required) - The mind ID from `create_mind`
+- `contentType` (string, optional) - MIME type:
+  - `text/vtt`
+  - `application/pdf`
+  - `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+  - `application/octet-stream` (default)
 
 **Returns:**
 ```json
 {
   "signedUrl": "https://storage.googleapis.com/mind-reasoner-prod/...",
-  "artifactId": "e29e3da5-5495-4666-89dd-6886475d0a72"
+  "artifactId": "e29e3da5-5495-4666-89dd-6886475d0a72",
+  "contentType": "text/vtt"
 }
 ```
 
-**Save both `signedUrl` and `artifactId` for next steps.**
+**Save both `signedUrl` and `artifactId` and `contentType` for next steps.**
 
 ---
 
@@ -255,17 +261,14 @@ Uploads a file to the signed URL.
 **Parameters:**
 - `signedUrl` (string, required) - URL from `get_signed_upload_url`
 - `filePath` (string, required) - Absolute path to the file
-- `contentType` (string, required) - MIME type:
-  - `.vtt` → `text/vtt`
-  - `.pdf` → `application/pdf`
-  - `.docx` → `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+- `contentType` (string, required) - contentType from `get_signed_upload_url`
 
 **Example:**
 ```json
 {
-  "signedUrl": "https://storage.googleapis.com/...",
+  "signedUrl": "https://assets.mindreasoner.com/...",
   "filePath": "/Users/username/Documents/transcript.vtt",
-  "contentType": "text/vtt"
+  "contentType": "text/vtt" // <-- Content type from step 2
 }
 ```
 
@@ -572,6 +575,18 @@ AI-generated response based on Sales Manager John's communication style and pers
 4. **Ensure file exists**
    ```bash
    ls -lh /path/to/your/file.vtt
+   ```
+
+5. **Ensure content type matches the file extension**
+   ```bash
+   # Wrong
+   mr-cli upload-url 6eadcb0b-7d0b-416f-a18d-dd1e6776be48 text/vtt
+   mr-cli upload "..." /Users/me/Documents/transcript.vtt application/pdf
+   ```
+   ```bash
+   # Right
+   mr-cli upload-url 6eadcb0b-7d0b-416f-a18d-dd1e6776be48 text/vtt
+   mr-cli upload "..." /Users/me/Documents/transcript.vtt text/vtt
    ```
 
 ---
