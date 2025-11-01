@@ -12,7 +12,7 @@ import FormData from "form-data";
 
 dotenv.config();
 
-const API_BASE_URL = "https://staging.app.mindreasoner.com/api/public/v1";
+const API_BASE_URL = "https://app.mindreasoner.com/api/public/v1";
 const API_KEY = process.env.MIND_REASONER_API_KEY;
 
 if (!API_KEY) {
